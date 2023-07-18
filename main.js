@@ -47,3 +47,14 @@ function renderTasks() {
 }
 
 
+const startButtons = document.querySelectorAll('.task .start-button');
+
+startButtons.forEach(button =>{
+  button.addEventListener('click', e =>{
+    if(!timer){
+      const id = button.getAttribute('data-id');
+      startButtonHandler(id);
+      button.textContent = "In progress...";
+    }
+  });
+});
